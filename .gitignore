@@ -2,3 +2,7 @@ client/config.ini
 client/node_modules
 server/node_modules
 server/.env
+client/client-linux
+.gitignore
+client/client-win.exe
+client/client-macos

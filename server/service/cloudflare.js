@@ -47,7 +47,7 @@ async function getDomainIdFromZone(fastify, domain) {
   const idZoneCached = fastify.cache.get("idZone");
   const domainIDCached = fastify.cache.get(domain);
 
-  if (domainIDCached) {
+  if (domainIDCached==domain) {
     return domainIDCached;
   }
 
