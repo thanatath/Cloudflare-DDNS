@@ -29,8 +29,7 @@ async function getIdZoneFromDomain(fastify) {
     .catch((error) => {
       console.error("Fetch error:", error);
     });
-
-  const domainID = res.result.find((x) => (x.name = process.env.DOMAIN)).id;
+  const domainID = res.result.find(({ name }) => name === process.env.DOMAIN).id;
   fastify.cache.set("idZone", domainID);
   return domainID;
 }
@@ -79,7 +78,7 @@ async function getDomainIdFromZone(fastify, domain) {
       console.error("Fetch error:", error);
     });
 
-  domainID = res.result.find((x) => (x.name = domain)).id;
+  domainID = res.result.find(({ name }) => name === domain).id;
   fastify.cache.set(domain, domainID);
 
   return domainID;
