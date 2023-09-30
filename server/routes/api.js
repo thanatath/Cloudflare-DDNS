@@ -17,12 +17,12 @@ async function apiRoute(fastify) {
   });
   fastify.post("/api/update", ipSchema.ipSchema, async (request, reply) => {
     console.log(
-      `${request.ip} update ${request.body.subDomain} to ${
+      `${request.ip} update ${request.body.domain} to ${
         request.body.ip
       } At ${new Date(new Date().toLocaleString({ timeZone: process.env.TZ }))}`
     );
     const detail = {
-      domain: request.body.subDomain,
+      domain: request.body.domain,
       ip: request.body.ip,
       ipv: request.body.ipv,
     };

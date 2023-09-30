@@ -4,11 +4,11 @@ module.exports = {
       body: {
         type: "object",
         properties: {
-          subDomain: { type: "string" },
+          domain: { type: "string" },
           ipv: { type: "number" },
           ip: { type: "string" },
         },
-        required: ["subDomain", "ipv", "ip"],
+        required: ["domain", "ipv", "ip"],
       },
       response: {
         200: {

@@ -37,7 +37,7 @@ async function getIdZoneFromDomain(fastify) {
 
 ////////////////////////////////////////////////////////////////////////
 
-async function getDomainIdFromZone(fastify, subDomain) {
+async function getDomainIdFromZone(fastify, domain) {
   const headers = {
     "X-Auth-Key": process.env.TOKEN,
     "X-Auth-Email": process.env.EMAIL,
@@ -45,7 +45,7 @@ async function getDomainIdFromZone(fastify, subDomain) {
   };
 
   const idZoneCached = fastify.cache.get("idZone");
-  const domainIDCached = fastify.cache.get(subDomain);
+  const domainIDCached = fastify.cache.get(domain);
 
   if (domainIDCached) {
     return domainIDCached;
@@ -79,8 +79,8 @@ async function getDomainIdFromZone(fastify, subDomain) {
       console.error("Fetch error:", error);
     });
 
-  domainID = res.result.find((x) => (x.name = subDomain)).id;
-  fastify.cache.set(subDomain, domainID);
+  domainID = res.result.find((x) => (x.name = domain)).id;
+  fastify.cache.set(domain, domainID);
 
   return domainID;
 }

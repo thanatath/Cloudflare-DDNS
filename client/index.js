@@ -14,7 +14,7 @@ async function pushAPI(ip) {
   const url = config.ENDPOINT;
 
   const data = {
-    subDomain: config.SUBDOMAIN,
+    domain: config.DOMAIN,
     ipv: config.IPV,
     ip: ip,
   };
