@@ -36,7 +36,7 @@ Clone this repository to your local machine:
 TOKEN=yourcloudflaretoken
 EMAIL=yourcloudflareemail@example.com
 DOMAIN=yourdomain.com !root domain
-CLOUDFLARE=yourcloudflareapikey
+CLOUDFLARE=https://api.cloudflare.com/client/v4/zones/
 PORT=3000
 TZ=Asia/bangkok
 TTL=120 time to cache response from CF (sec)
