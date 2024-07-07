@@ -1,7 +1,7 @@
 require('dotenv').config();
 async function getIdZoneFromDomain(fastify) {
   const headers = {
-    "X-Auth-Key": process.env.TOKEN,
+    "Authorization": "Bearer " + process.env.TOKEN,
     "X-Auth-Email": process.env.EMAIL,
     "Content-Type": "application/json",
   };
@@ -38,7 +38,7 @@ async function getIdZoneFromDomain(fastify) {
 
 async function getDomainIdFromZone(fastify, domain) {
   const headers = {
-    "X-Auth-Key": process.env.TOKEN,
+    "Authorization": "Bearer " + process.env.TOKEN,
     "X-Auth-Email": process.env.EMAIL,
     "Content-Type": "application/json",
   };
@@ -88,7 +88,7 @@ async function getDomainIdFromZone(fastify, domain) {
 
 async function updateDomainIdFromZone(fastify, detail) {
   const headers = {
-    "X-Auth-Key": process.env.TOKEN,
+    "Authorization": "Bearer " + process.env.TOKEN,
     "X-Auth-Email": process.env.EMAIL,
     "Content-Type": "application/json",
   };
